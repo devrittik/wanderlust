@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate') %>
+
+        <div class="row mt-3">
+            <div class="col-8 offset-2">
+                <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                    <div class="container mt-5">
+                        <h3>Create A New Listing</h3>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label><br>
+                            <input name="listing[title]" type="text" class="form-control" placeholder="Enter Title"
+                                required>
+                            <div class="valid-feedback">
+                                Title Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Enter a nice title!
+                            </div>
+                        </div><br>
+                        <div class="mb-3"><label for="description" class="form-label">Description</label><br>
+                            <textarea name="listing[description]" id="description" placeholder="Enter Description"
+                                class="form-control" required></textarea>
+                            <div class="valid-feedback">
+                                Description Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Enter a short description
+                            </div>
+                        </div><br>
+                        <!-- <div class="mb-3">
+                            <label for="image" class="form-label">Image</label><br>
+                            <input name="listing[image][url]" type="text" placeholder="Enter Image URL" class="form-control">
+                        </div><br> -->
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Upload Listing Image</label><br>
+                            <input name="listing[image][url]" type="file" class="form-control" required>
+                        </div><br>
+                        <div class="row">
+                            <div class="mb-3 col-md-6"><label for="price" class="form-label">Price</label><br>
+                                <input name="listing[price]"  placeholder="1200" class="form-control"
+                                    required>
+                                <div class="valid-feedback">
+                                    Price Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Price(in positive integer)
+                                </div>
+                            </div>
+                            <div class="mb-3 col-md-6"><label for="country" class="form-label">Country</label><br>
+                                <input name="listing[country]" type="text" placeholder="India" class="form-control"
+                                    required>
+                                <div class="valid-feedback">
+                                    Country Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter a valid country name!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3"><label for="location" class="form-label">Location</label><br>
+                            <input name="listing[location]" type="text" placeholder="Jaipur, Rajasthan"
+                                class="form-control" required>
+                            <div class="valid-feedback">
+                                Location Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Enter Location!
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-dark add-btn mt-3">Add</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
