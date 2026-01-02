@@ -90,13 +90,16 @@
                                                 <p class="card-text">
                                                     <%= review.comment %>
                                                 </p>
-                                                <% if (currUser && review.author.username.equals(currUser._id)) { %>
-                                                <form
-                                                    action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
-                                                    method="post" class="mb-3">
-                                                    <button type="submit" class="btn btn-sm btn-dark">Delete</button>
-                                                </form>
-                                                <% } %>
+                                                <% if (currUser &&
+                                                    review.author._id.toString()===currUser._id.toString()) { %>
+
+                                                    <form
+                                                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                                        method="post" class="mb-3">
+                                                        <button type="submit"
+                                                            class="btn btn-sm btn-dark">Delete</button>
+                                                    </form>
+                                                    <% } %>
                                             </div>
                                         </div>
                                         <% } %>
